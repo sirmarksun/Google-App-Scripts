@@ -1,0 +1,14 @@
+function deleteAllExceptGeneral() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheets = ss.getSheets();
+  
+  // Loop through all the sheets
+  for (var i = 0; i < sheets.length; i++) {
+    var sheet = sheets[i];
+    
+    // If the sheet is not named 'General', delete it
+    if (sheet.getName() !== 'General') {
+      ss.deleteSheet(sheet);
+    }
+  }
+}
